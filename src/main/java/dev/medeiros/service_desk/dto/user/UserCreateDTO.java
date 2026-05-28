@@ -1,9 +1,7 @@
 package dev.medeiros.service_desk.dto.user;
 
-import dev.medeiros.service_desk.entity.Department;
 import dev.medeiros.service_desk.enums.Role;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,16 +11,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class UserCreateDTO {
 
-    @NotNull
+    @NotBlank
     private String name;
-    @Column(unique = true)
-    @NotNull
+    @NotBlank
     private String email;
-    @NotNull
+    @NotBlank
     private String password;
-    @NotNull
-    private Department department;
-    @NotNull
+    @NotBlank
+    private String department;
+    @NotBlank
     private Role role;
 
 }
